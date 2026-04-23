@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hello, world — Slate Playground</title>
+  <meta name="description" content="An introduction to the Slate Playground test site." />
+  <meta property="og:title" content="Hello, world — Slate Playground" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="/js/slate.js" data-site-id="YOUR_SITE_ID" defer></script>
+</head>
+<body>
+
+<div class="notice">
+  Slate CMS test site · Edit <code>data-site-id</code> in the <code>&lt;head&gt;</code> to connect to a real Slate site.
+</div>
+
+<header role="banner">
+  <nav class="nav">
+    <a class="brand" href="/">
+      <span class="brand-mark">S</span>
+      Slate Playground
+    </a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <article class="post-content wrap">
+    <p class="post-meta">April 20, 2026 · 3 min read</p>
+    <h1 class="slate-heading slate-h1">Hello, world — welcome to the playground</h1>
+
+    <p class="slate-p">
+      This post is hand-authored placeholder content. When the Slate snippet
+      connects to a real site, it'll fetch the matching post by slug and swap
+      this content out with whatever's in the CMS.
+    </p>
+
+    <h2 class="slate-heading slate-h2">How the swap works</h2>
+
+    <p class="slate-p">
+      The snippet loads a small <em>manifest</em> — a list of every published
+      slug on the site — and compares it against <code>window.location.pathname</code>.
+      If there's a match, it fetches the full content as JSON blocks and
+      renders them into the page's <code>&lt;main&gt;</code> element.
+    </p>
+
+    <blockquote class="slate-quote">
+      The static HTML is the shell. The CMS is the voice. Separate concerns,
+      same page.
+    </blockquote>
+
+    <h2 class="slate-heading slate-h2">What to try</h2>
+
+    <ul class="slate-list">
+      <li>Create a post in the Slate app with slug <code>/blog/hello-world</code> and reload this page — your content should replace this placeholder.</li>
+      <li>Edit the title and meta description in Slate — watch the browser tab and <code>og:</code> tags update.</li>
+      <li>Publish a post at a slug that has no matching HTML file — the snippet will rebuild the page from the cached header and footer.</li>
+    </ul>
+
+    <hr class="slate-hr" />
+
+    <p class="slate-p" style="color:var(--ink-faint);font-size:15px;">
+      This file lives at <code>blog/hello-world.html</code> in the repo. Feel
+      free to edit it locally and push — the static version is what visitors
+      see until the Slate snippet kicks in.
+    </p>
+  </article>
+</main>
+
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div>© 2026 Slate Playground · A demo site</div>
+    <div>
+      <a href="/about.html">About</a> · <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Local env (if we ever add one)
+.env
+.env.local
+
+# Node (unused today, but future-proof)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Wrangler cache if user runs wrangler locally
+.wrangler/

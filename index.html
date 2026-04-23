@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Slate Playground — a test site for the Slate CMS</title>
+  <meta name="description" content="A demo site used to test the Slate headless CMS. Pages and posts here can be edited live from the Slate app." />
+  <meta property="og:title" content="Slate Playground" />
+  <meta property="og:description" content="A demo site used to test the Slate headless CMS." />
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- ── Slate CMS snippet ─────────────────────────────────────
+       Swap data-site-id with your real snippet_token once you've
+       created a site in the Slate app. While the token is the
+       placeholder, the snippet simply no-ops and the hand-authored
+       content below is shown. -->
+  <script src="/js/slate.js" data-site-id="YOUR_SITE_ID" defer></script>
+</head>
+<body>
+
+<div class="notice">
+  This is a <strong>test site for the Slate CMS</strong>. Edit
+  <code>data-site-id</code> in each page's <code>&lt;head&gt;</code> once
+  you have a real token from the Slate app.
+</div>
+
+<header role="banner">
+  <nav class="nav">
+    <a class="brand" href="/">
+      <span class="brand-mark">S</span>
+      Slate Playground
+    </a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Slate CMS · Live demo</p>
+      <h1>A tiny site, wired up to a <em>headless CMS</em> you can edit from anywhere.</h1>
+      <p class="lede">
+        Everything on this page — the words, the blog posts, the about copy —
+        is editable from the Slate app. Paste the script tag into any site's
+        <code>&lt;head&gt;</code> and your content flows in.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn--primary" href="/blog/">Read the blog</a>
+        <a class="btn btn--ghost" href="https://github.com/cadenburleson/slate-playground">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>What you're looking at</h2>
+      <p class="section-lede">
+        A three-page static site (home, blog, about) built to exercise the
+        Slate snippet's page detection, content injection, and dynamic-route
+        rendering.
+      </p>
+      <div class="features">
+        <div class="feature">
+          <h3>Static shell</h3>
+          <p>Hand-authored HTML + CSS. No build step. Deploys to Cloudflare Pages on every push.</p>
+        </div>
+        <div class="feature">
+          <h3>Slate snippet</h3>
+          <p>Loads a site manifest, matches the current URL, and swaps the <code>&lt;main&gt;</code> content with CMS-managed blocks.</p>
+        </div>
+        <div class="feature">
+          <h3>Dynamic routes</h3>
+          <p>Brand-new URLs created in Slate rebuild the page from the cached header and footer shell — no predefined route needed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Latest from the blog</h2>
+      <p class="section-lede">
+        Placeholder posts written into the HTML. Once connected, the Slate app
+        will manage these and any new posts you create.
+      </p>
+      <div class="posts">
+        <article class="post-card">
+          <div class="post-date">Apr 20, 2026</div>
+          <div>
+            <h3><a href="/blog/hello-world.html">Hello, world — welcome to the playground</a></h3>
+            <p>A quick tour of what this site is, how the Slate snippet works, and what you can do once you wire in a real site ID.</p>
+          </div>
+        </article>
+        <article class="post-card">
+          <div class="post-date">Apr 15, 2026</div>
+          <div>
+            <h3><a href="/blog/">More posts soon</a></h3>
+            <p>New posts created in the Slate app will appear at <code>/blog/&lt;slug&gt;</code> automatically. The snippet rebuilds from cached header/footer.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div>© 2026 Slate Playground · A demo site</div>
+    <div>
+      <a href="/about.html">About</a> · <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

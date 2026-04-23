@@ -1,0 +1,403 @@
+:root {
+  --bg: #faf8f4;
+  --surface: #ffffff;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-faint: #888;
+  --rule: #e6e1d7;
+  --accent: #c2410c;
+  --accent-ink: #7c2d12;
+  --radius: 6px;
+  --maxw: 780px;
+  --maxw-wide: 1100px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-size: 18px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 120ms ease;
+}
+a:hover { border-bottom-color: var(--accent); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ─── Layout ─────────────────────────────────────────────── */
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.wrap--wide { max-width: var(--maxw-wide); }
+
+/* ─── Header ─────────────────────────────────────────────── */
+
+header[role="banner"] {
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: saturate(1.4) blur(8px);
+}
+
+.nav {
+  max-width: var(--maxw-wide);
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  font-family: "Söhne", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand:hover { border: none; }
+
+.brand-mark {
+  width: 26px; height: 26px;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+  transform: rotate(-4deg);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  font-family: "Söhne", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+.nav-links a {
+  color: var(--ink-soft);
+  border: none;
+}
+.nav-links a:hover { color: var(--ink); border: none; }
+
+/* ─── Hero ───────────────────────────────────────────────── */
+
+.hero {
+  padding: 96px 0 64px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.eyebrow {
+  font-family: "Söhne", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 14px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 64px);
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin: 0 0 24px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent-ink);
+}
+
+.hero p.lede {
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 620px;
+  margin: 0 0 32px;
+}
+
+.cta-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: var(--radius);
+  font-family: "Söhne", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.btn--primary { background: var(--ink); color: var(--bg); }
+.btn--primary:hover { background: var(--accent-ink); border-bottom: 1px solid var(--accent-ink); }
+.btn--ghost { color: var(--ink); border-color: var(--rule); background: transparent; }
+.btn--ghost:hover { border-color: var(--ink); border-bottom-color: var(--ink); }
+
+/* ─── Sections ───────────────────────────────────────────── */
+
+section {
+  padding: 72px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+section h2 {
+  font-size: clamp(26px, 3.5vw, 36px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+}
+
+section .section-lede {
+  color: var(--ink-soft);
+  margin: 0 0 40px;
+  font-size: 18px;
+}
+
+/* Feature grid */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.feature {
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+}
+
+.feature h3 {
+  font-family: "Söhne", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+.feature p { margin: 0; color: var(--ink-soft); font-size: 16px; }
+
+/* Blog cards */
+
+.posts {
+  display: grid;
+  gap: 0;
+}
+
+.post-card {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 28px;
+  padding: 28px 0;
+  border-top: 1px solid var(--rule);
+  align-items: start;
+}
+.post-card:last-child { border-bottom: 1px solid var(--rule); }
+
+.post-date {
+  font-family: "Söhne", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  color: var(--ink-faint);
+  letter-spacing: 0.02em;
+  padding-top: 4px;
+}
+
+.post-card h3 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+.post-card h3 a { color: var(--ink); border: none; }
+.post-card h3 a:hover { color: var(--accent); }
+.post-card p { margin: 0; color: var(--ink-soft); }
+
+@media (max-width: 560px) {
+  .post-card { grid-template-columns: 1fr; gap: 8px; }
+  .post-date { padding-top: 0; }
+}
+
+/* ─── Article (single blog post) ─────────────────────────── */
+
+main .post-content,
+main .page-content,
+main .slate-content {
+  padding: 64px 0 96px;
+}
+
+.post-meta {
+  font-family: "Söhne", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  color: var(--ink-faint);
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+/* ─── Slate CMS content classes ──────────────────────────── */
+/* These match the class names the Slate snippet emits so CMS
+   content looks consistent with the hand-authored placeholders. */
+
+.slate-content {
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.slate-heading {
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  margin: 1.6em 0 0.5em;
+}
+.slate-h1 { font-size: clamp(32px, 4vw, 44px); }
+.slate-h2 { font-size: clamp(26px, 3vw, 32px); }
+.slate-h3 { font-size: 22px; }
+.slate-h4 { font-size: 18px; font-family: "Söhne", "Inter", sans-serif; font-weight: 600; }
+
+.slate-p {
+  font-size: 18px;
+  line-height: 1.75;
+  margin: 0 0 1.25em;
+  color: var(--ink);
+}
+
+.slate-quote {
+  border-left: 3px solid var(--accent);
+  padding: 4px 0 4px 20px;
+  margin: 28px 0;
+  font-style: italic;
+  font-size: 20px;
+  color: var(--ink-soft);
+}
+
+.slate-list {
+  padding-left: 1.4em;
+  margin: 0 0 1.25em;
+}
+.slate-list li { margin-bottom: 0.35em; }
+
+.slate-figure {
+  margin: 32px 0;
+}
+.slate-img {
+  border-radius: var(--radius);
+  width: 100%;
+}
+.slate-caption {
+  font-size: 14px;
+  color: var(--ink-faint);
+  text-align: center;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.slate-hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 40px 0;
+}
+
+.slate-service {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.slate-service-title {
+  font-family: "Söhne", "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0 0 6px;
+}
+.slate-service-desc { margin: 0; color: var(--ink-soft); font-size: 15px; }
+.slate-service-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: var(--radius);
+  font-family: "Söhne", "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  white-space: nowrap;
+}
+.slate-service-btn:hover { background: var(--accent-ink); border: none; }
+
+/* ─── Footer ─────────────────────────────────────────────── */
+
+footer[role="contentinfo"] {
+  padding: 48px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--rule);
+  font-size: 14px;
+  color: var(--ink-faint);
+  font-family: "Söhne", "Inter", sans-serif;
+}
+
+.footer-inner {
+  max-width: var(--maxw-wide);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-inner a { color: var(--ink-soft); border: none; }
+.footer-inner a:hover { color: var(--ink); }
+
+/* ─── Notice banner (shows CMS connection state) ─────────── */
+
+.notice {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  color: var(--accent-ink);
+  font-family: "Söhne", "Inter", sans-serif;
+  font-size: 13px;
+  padding: 10px 18px;
+  text-align: center;
+}
+.notice code {
+  background: rgba(124, 45, 18, 0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}

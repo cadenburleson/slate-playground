@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Slate Playground</title>
+  <meta name="description" content="About the Slate Playground test site." />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="/js/slate.js" data-site-id="YOUR_SITE_ID" defer></script>
+</head>
+<body>
+
+<div class="notice">
+  Slate CMS test site · Edit <code>data-site-id</code> in the <code>&lt;head&gt;</code> to connect to a real Slate site.
+</div>
+
+<header role="banner">
+  <nav class="nav">
+    <a class="brand" href="/">
+      <span class="brand-mark">S</span>
+      Slate Playground
+    </a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <article class="page-content wrap">
+    <p class="eyebrow">About</p>
+    <h1 style="font-size:clamp(32px,4vw,44px);font-weight:500;letter-spacing:-0.015em;line-height:1.1;margin:0 0 24px;">
+      Why this site exists
+    </h1>
+
+    <p class="slate-p">
+      Slate Playground is a deliberately minimal site used to test the Slate
+      headless CMS. It's three simple pages — home, blog, and this one —
+      plus a sample post, all stitched together with vanilla HTML and CSS.
+    </p>
+
+    <p class="slate-p">
+      When the Slate snippet is active, this page's content gets replaced with
+      whatever an editor writes in the Slate app. That lets us verify the
+      snippet's page-detection, meta-injection, and dynamic-route logic in a
+      controlled environment, without all the noise of a real marketing site.
+    </p>
+
+    <h2 class="slate-heading slate-h2">How to connect</h2>
+
+    <p class="slate-p">
+      Create a site in the Slate app, copy the <code>snippet_token</code> it
+      generates, then replace <code>YOUR_SITE_ID</code> in each HTML file's
+      <code>&lt;head&gt;</code>. Push to main and Cloudflare Pages will
+      redeploy automatically.
+    </p>
+
+    <blockquote class="slate-quote">
+      The whole point of a headless CMS is that the site and the content stay
+      separate concerns. This page proves it: the HTML is static, the words
+      are not.
+    </blockquote>
+
+    <h2 class="slate-heading slate-h2">What gets tested here</h2>
+
+    <ul class="slate-list">
+      <li>Manifest fetch + slug matching against <code>window.location.pathname</code></li>
+      <li>Content area detection (the <code>&lt;main&gt;</code> selector wins first)</li>
+      <li>Meta tag injection (title, description, og:image)</li>
+      <li>Shell capture — header/footer stored in <code>localStorage</code> for new routes</li>
+      <li>DOM-based rendering of every block type: heading, paragraph, quote, list, image, divider, service</li>
+    </ul>
+  </article>
+</main>
+
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div>© 2026 Slate Playground · A demo site</div>
+    <div>
+      <a href="/about.html">About</a> · <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

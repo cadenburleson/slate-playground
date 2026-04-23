@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog — Slate Playground</title>
+  <meta name="description" content="Posts from the Slate Playground test site." />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="/js/slate.js" data-site-id="YOUR_SITE_ID" defer></script>
+</head>
+<body>
+
+<div class="notice">
+  Slate CMS test site · Edit <code>data-site-id</code> in the <code>&lt;head&gt;</code> to connect to a real Slate site.
+</div>
+
+<header role="banner">
+  <nav class="nav">
+    <a class="brand" href="/">
+      <span class="brand-mark">S</span>
+      Slate Playground
+    </a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Blog</p>
+      <h2 style="font-size:clamp(32px,4vw,44px);margin:0 0 16px;">Writing about the stack</h2>
+      <p class="section-lede">
+        Static placeholder posts. New posts authored in Slate will appear here
+        at <code>/blog/&lt;slug&gt;</code> automatically — no rebuild needed.
+      </p>
+
+      <div class="posts">
+        <article class="post-card">
+          <div class="post-date">Apr 20, 2026</div>
+          <div>
+            <h3><a href="/blog/hello-world.html">Hello, world — welcome to the playground</a></h3>
+            <p>A quick tour of what this site is, how the Slate snippet works, and what you can do once you wire in a real site ID.</p>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <div class="post-date">Coming soon</div>
+          <div>
+            <h3><a href="/blog/dynamic-routes.html">Testing dynamic routes</a></h3>
+            <p>Create a post in the Slate app at <code>/blog/dynamic-routes</code> and watch it render here even though no HTML file exists for it.</p>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <div class="post-date">Coming soon</div>
+          <div>
+            <h3><a href="/blog/block-gallery.html">Every block type, in one post</a></h3>
+            <p>Headings, paragraphs, quotes, lists, images, dividers, and service blocks — a style-test for the snippet's renderer.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div>© 2026 Slate Playground · A demo site</div>
+    <div>
+      <a href="/about.html">About</a> · <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
