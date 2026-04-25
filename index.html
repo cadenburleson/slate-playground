@@ -19,9 +19,9 @@
 <body>
 
 <div class="notice">
-  This is a <strong>test site for the Slate CMS</strong>. Edit
-  <code>data-site-id</code> in each page's <code>&lt;head&gt;</code> once
-  you have a real token from the Slate app.
+  This is a <strong>test site for the Slate CMS</strong>. To wire it to a
+  real site, append <code>?slate_site_id=&lt;your snippet_token&gt;</code>
+  to any URL (it persists in localStorage). See the README for details.
 </div>
 
 <header role="banner">
@@ -33,8 +33,8 @@
     <div class="nav-links">
       <a href="/">Home</a>
       <a href="/blog/">Blog</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
     </div>
   </nav>
 </header>
@@ -92,7 +92,7 @@
         <article class="post-card">
           <div class="post-date">Apr 20, 2026</div>
           <div>
-            <h3><a href="/blog/hello-world.html">Hello, world — welcome to the playground</a></h3>
+            <h3><a href="/blog/hello-world">Hello, world — welcome to the playground</a></h3>
             <p>A quick tour of what this site is, how the Slate snippet works, and what you can do once you wire in a real site ID.</p>
           </div>
         </article>
@@ -112,7 +112,7 @@
   <div class="footer-inner">
     <div>© 2026 Slate Playground · A demo site</div>
     <div>
-      <a href="/about.html">About</a> · <a href="/contact.html">Contact</a>
+      <a href="/about">About</a> · <a href="/contact">Contact</a>
     </div>
   </div>
 </footer>

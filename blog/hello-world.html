@@ -12,7 +12,8 @@
 <body>
 
 <div class="notice">
-  Slate CMS test site · Edit <code>data-site-id</code> in the <code>&lt;head&gt;</code> to connect to a real Slate site.
+  Slate CMS test site · append <code>?slate_site_id=&lt;your snippet_token&gt;</code>
+  to any URL to connect to a Slate site (persists via localStorage).
 </div>
 
 <header role="banner">
@@ -24,8 +25,8 @@
     <div class="nav-links">
       <a href="/">Home</a>
       <a href="/blog/">Blog</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
     </div>
   </nav>
 </header>
@@ -77,7 +78,7 @@
   <div class="footer-inner">
     <div>© 2026 Slate Playground · A demo site</div>
     <div>
-      <a href="/about.html">About</a> · <a href="/contact.html">Contact</a>
+      <a href="/about">About</a> · <a href="/contact">Contact</a>
     </div>
   </div>
 </footer>

@@ -11,13 +11,31 @@
     return scripts[scripts.length - 1];
   })();
 
-  var SITE_ID = script.getAttribute("data-site-id");
-  var API = "https://YOUR_SUPABASE_URL/functions/v1";
+  // Resolve site id with override priority:
+  //   1. ?slate_site_id=<token> in the URL (persists to localStorage)
+  //   2. localStorage("slate_site_id")
+  //   3. data-site-id on the script tag
+  // The override pattern lets you test against a live Slate site without
+  // committing your snippet_token to the repo.
+  var SITE_ID = (function () {
+    try {
+      var qs = new URLSearchParams(window.location.search).get("slate_site_id");
+      if (qs) {
+        localStorage.setItem("slate_site_id", qs);
+        return qs;
+      }
+      var stored = localStorage.getItem("slate_site_id");
+      if (stored) return stored;
+    } catch (e) {}
+    return script.getAttribute("data-site-id");
+  })();
+
+  var API = "https://dmmwptwopitvjeyweqrv.supabase.co/functions/v1";
   var MANIFEST_KEY = "slate_manifest_" + SITE_ID;
   var HEADER_KEY = "slate_header_" + SITE_ID;
   var FOOTER_KEY = "slate_footer_" + SITE_ID;
 
-  if (!SITE_ID) return;
+  if (!SITE_ID || SITE_ID === "YOUR_SITE_ID") return;
 
   // ── DOM Helpers ─────────────────────────────────────────────────────────────
 

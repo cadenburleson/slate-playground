@@ -29,18 +29,39 @@ Every page has:
 
 ## Connecting to a Slate site
 
+The site ships with `data-site-id="YOUR_SITE_ID"` so visitors see the static
+fallback by default. To attach your own Slate site, you have two options:
+
+### Option A — runtime override (no commit, recommended for quick tests)
+
+Append `?slate_site_id=<your snippet_token>` to any URL on the deployed site:
+
+```
+https://slate-playground.pages.dev/?slate_site_id=abcd1234-...
+```
+
+The snippet stores the token in `localStorage`, so subsequent navigations in
+that browser/session stay connected. To clear it, run in the console:
+
+```js
+localStorage.removeItem("slate_site_id");
+```
+
+This is the right choice if you're sharing the public demo URL but want to
+test against your own site without forking the repo.
+
+### Option B — bake the token into your fork
+
+If you want the site to default to your Slate site for every visitor:
+
 1. In the Slate app, create a site and copy its `snippet_token`.
-2. Open `js/slate.js` and set the `API` constant to your Supabase Edge Functions URL:
-   ```js
-   var API = "https://<your-project-ref>.supabase.co/functions/v1";
-   ```
-3. Replace `YOUR_SITE_ID` in each HTML file's `<head>`:
-   ```html
-   <script src="/js/slate.js" data-site-id="abcd1234..." defer></script>
-   ```
-   (Shell one-liner if you'd rather:)
+2. Replace `YOUR_SITE_ID` in each HTML file's `<head>`:
    ```sh
    find . -name '*.html' -exec sed -i '' 's/YOUR_SITE_ID/your-real-token/g' {} +
+   ```
+3. (Optional) If you've forked into your own Supabase project, edit `js/slate.js`:
+   ```js
+   var API = "https://<your-project-ref>.supabase.co/functions/v1";
    ```
 4. Commit and push. Cloudflare Pages redeploys on every push to `main`.
 
